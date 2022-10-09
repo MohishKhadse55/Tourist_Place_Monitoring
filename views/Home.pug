@@ -1,0 +1,76 @@
+mixin imgItem(logs)
+    each log in logs
+        div
+            img(src=`/images/${log.image}`)
+        div
+
+
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Monitor
+    link(rel='stylesheet' href='/stylesheets/Home.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+body
+    nav.nav
+        .title Pune
+        .location
+            a(href='#')
+                | Lake
+                img(src='/images/location.png' alt='' height='20px')
+        .profile
+            a(href='')
+                | Profile
+                img(src='/images/avatar.png' alt='' height='20px')
+        button.logout  Log Out
+    .text1 Images :
+
+    .gallery-container
+        .thumbnails
+            +imgItem(logs)
+        .scrollbar
+            .thumb
+        .slides
+            +imgItem(logs)
+
+    div
+        button.refresh
+            | Refresh
+            i.fa.fa-refresh.fa-spin(style='font-size:20px')
+    .text2 Data :
+    #table
+        table#datatable
+            -let count = 1;
+            tra
+                th Sr no.
+                th pH
+                th Pollution
+                th Time
+            each log in logs
+                tr
+
+
+                    td= `${count}`
+                    td= `${log.ph}`
+                    td= `${log.airQuality}`
+                    td= `${log.date}`
+                    -count++
+
+
+    footer
+        #about.footertext About
+        .footertext Contact : +91 9987106516
+        .footertext Email : shajjadhussain.shaikh20@vit.edu
+        .cc &copy; All rights reserverd to Monitoring server
+        .socialmedia
+            a.fa.fa-facebook(href='#')
+            a.fa.fa-twitter(href='#')
+            a.fa.fa-google(href='#')
+            a.fa.fa-linkedin(href='#')
+            a.fa.fa-youtube(href='#')
+    script(src='/javascripts/homeScript.js')

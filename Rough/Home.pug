@@ -1,0 +1,86 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Monitor
+    link(rel='stylesheet' href='style.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+body
+    nav.nav
+        .title Monitoring Site
+        .location
+            a(href='#')
+                | Location
+                img(src='/images/location.png' alt='' height='20px')
+        .profile
+            a(href='')
+                | Profile
+                img(src='/images/avatar.png' alt='' height='20px')
+        button.logout  Log Out
+    .text1 Spotted Garbage :
+    .container
+        .first
+            .garbageimg
+                img(src='' alt='')
+            .garbageimg
+                img(src='' alt='')
+            .garbageimg
+                img(src='' alt='')
+            .garbageimg
+                img(src='' alt='')
+        .first
+            .garbageimg
+                img(src='' alt='')
+            .garbageimg
+                img(src='' alt='')
+            .garbageimg
+                img(src='' alt='')
+            .garbageimg
+                img(src='' alt='')
+    div
+        button.refresh
+            | Refresh
+            i.fa.fa-refresh.fa-spin(style='font-size:20px')
+    .text2 Data :
+    #table
+        table#datatable
+            tra
+                th Sr no.
+                th pH
+                th Pollution
+                th Time
+            tr
+                td 1
+                td 5
+                td 98
+                td 4PM
+            tr
+                td 2
+                td 5.7
+                td 78
+                td 8PM
+            tr
+                td 3
+                td 4.2
+                td 91
+                td 6:45PM
+            tr
+                td 4
+                td 6.6
+                td 95
+                td 7:22PM
+    footer
+        #about.footertext About
+        .footertext Contact : +91 9987106516
+        .footertext Email : shajjadhussain.shaikh20@vit.edu
+        .cc &copy; All rights reserverd to Monitoring server
+        .socialmedia
+            a.fa.fa-facebook(href='#')
+            a.fa.fa-twitter(href='#')
+            a.fa.fa-google(href='#')
+            a.fa.fa-linkedin(href='#')
+            a.fa.fa-youtube(href='#')
