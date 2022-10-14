@@ -342,3 +342,104 @@ footer {
 .slides::-webkit-scrollbar {
     display: none;
 }
+
+
+.profile:hover{
+    transform: scale(1.1);
+}
+
+.profile li:hover ul {
+    display: block;
+}
+
+.profile li ul {
+    position: absolute;
+    width: 200px;
+    display: none;
+    top: 30%;
+
+}
+.profile li ul li {
+    background: white;
+    display: block;
+    border-radius: 0.5rem;
+    border: solid white;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.profile li ul li a{
+    display: block !important;
+    color: black;
+    font-size: 15px;
+
+}
+
+.profile li ul li a:hover {
+    background: white;
+
+}
+.profile li ul li a:hover{
+    /* color: black; */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile li ul li a img{
+    border-radius: 50%;
+}
+
+.location:hover{
+    transform: scale(1.1);
+}
+
+.location li:hover ul {
+    display: block;
+}
+
+.location li ul {
+    position: absolute;
+    width: 150px;
+    display: none;
+    top: 30%;
+    left: -10%;
+    /* border: 1px solid red; */
+
+}
+.location li ul li {
+    background: white;
+    display: block;
+    border-radius: 0.5rem;
+    border: solid white;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    width: 100%;
+    left: 100%;
+}
+
+.location li ul li a {
+    display: block !important;
+    color: black;
+    font-size: 15px;
+
+}
+
+.location li ul li:hover {
+    background: white;
+
+}
+.location li ul li a:hover{
+    /* color: black; */
+    font-weight: 100;
+    text-decoration: none;
+}
