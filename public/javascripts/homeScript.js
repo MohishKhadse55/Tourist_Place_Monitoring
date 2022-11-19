@@ -1,4 +1,5 @@
 const slideGallery = document.querySelector(".slides");
+const galleryContainer = document.querySelector(".gallery-container");
 const slides = slideGallery.querySelectorAll("div");
 const scrollbarThumb = document.querySelector(".thumb");
 const slideCount = slides.length;
