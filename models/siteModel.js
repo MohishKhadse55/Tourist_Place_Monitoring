@@ -19,6 +19,11 @@ const siteSchema = new mongoose.Schema({
     default: Date.now(),
   },
   allparameters: [{ type: String }],
+  logs: {
+    ref: "siteLogs",
+    foreignField: "place", // tour field is called the tour in the review model and here it will be called the _id
+    localField: "_id",
+  },
 });
 
 const Site = mongoose.model("Sites", siteSchema);

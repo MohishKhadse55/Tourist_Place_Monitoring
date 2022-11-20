@@ -8,6 +8,10 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
+router.post("/updateLogs/:siteId", function (req, res, next) {
+  console.log(req.body);
+});
+
 router.get("/getImages/:count", imageController.getLogs);
 
 router.post(
