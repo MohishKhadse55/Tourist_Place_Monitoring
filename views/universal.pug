@@ -24,20 +24,18 @@ body
             li
                 a(href='#')
                     | Location
-                    img(src='./location.png' alt='' height='20px')
+                    img(src='/images/location.png' alt='' height='20px')
                 ul
                     li
-                        a(href='#') Shanivar Wada
-                        a(href='#') Katraj Lake
-                        a(href='#') Singhgad
-                        a(href='#') Eskon Temple
-                        a(href='#') Saras Baug
+                        each sitea in logs.allSiteName
+                            a(href= `http://127.0.0.1:3000/getSiteData/${sitea.id}`)= `${sitea.siteName}`
+
 
         .profile
             li
                 a(href='')
                     | Profile
-                    img(src='./avatar.png' alt='' height='20px')
+                    img(src='/images/avatar.png' alt='' height='20px')
                 ul
                     li
                         a(href='#')
@@ -55,12 +53,13 @@ body
         .scrollbar
             .thumb
         .slides
-            +imgItem(logs)
+            +imgItem(logs.logs)
 
     div
-        button.refresh
-            | Refresh
-            i.fa.fa-refresh.fa-spin(style='font-size:20px')
+        a(href='http://127.0.0.1:3000/getSiteData/637a6ee66537525724282796')
+            button.refresh
+                | Refresh
+                i.fa.fa-refresh.fa-spin(style='font-size:20px')
     .text2 Data :
     #table
         table#datatable

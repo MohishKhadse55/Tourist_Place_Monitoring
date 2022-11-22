@@ -22,7 +22,7 @@ const siteSchema = new mongoose.Schema(
     allparameters: [String],
   },
   {
-    toJSON: { virtuals: true },
+    // toJSON: { virtuals: true },
     toObject: { virtuals: true },
   }
 );

@@ -29,7 +29,9 @@ if (form) {
     console.log(parameters);
 
     for (let i = 1; i <= parameters.length; i = i + 2) {
-      paraArray.push(parameters[i].value);
+      if (parameters[i].tagName === "INPUT") {
+        paraArray.push(parameters[i].value);
+      }
     }
     console.log(paraArray);
 
