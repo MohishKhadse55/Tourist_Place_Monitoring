@@ -9,3 +9,7 @@ exports.registerSite = async (req, res, next) => {
     message: "successfully added the site ",
   });
 };
+
+exports.getAdminPanel = async (req, res, next) => {
+  res.status(200).render("adminPanel", { title: "Admin Panel" });
+};

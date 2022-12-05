@@ -64,6 +64,10 @@ exports.getLoginForm = (req, res, next) => {
   res.status(200).render("login", { title: "Log in to your account" });
 };
 
+exports.getSignupForm = (req, res, next) => {
+  res.status(200).render("signup", { title: "Log in to your account" });
+};
+
 exports.isLoggedIn = async (req, res, next) => {
   try {
     if (req.cookies.jwt) {

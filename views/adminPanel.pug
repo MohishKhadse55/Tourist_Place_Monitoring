@@ -1,0 +1,21 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Site Registration Form
+    link(href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='/stylesheets/loginAndSignup.css')
+body
+    main.main
+        .login-form
+
+            h1.heading-secondary.ma-bt-lg Welcome to the admin panel!
+            h2.ma-bt-lg You can register Supervisor and Tourist site!
+
+
+                div(style="flex;margin:20px;")
+
+                .form__group
+                    a(href="/adminpanel/getSignupForm" style="margin-bottom:30px;").btn.btn--green Register Supervisor
+                    a(href="/adminpanel/getRegistrationForm" style="margin-left:0px;").btn.btn--green Register Tourist Site
+    script(  src='/javascripts/bundle.js')

@@ -6,7 +6,9 @@ const siteName = document.getElementById("siteName");
 const description = document.getElementById("siteDescription");
 const abc = document.querySelector(".abc");
 const loginForm = document.querySelector(".form--login");
+const signupForm = document.querySelector(".form--signup");
 import { login } from "./login";
+import { signup } from "./signup";
 
 if (addBtn) {
   addBtn.addEventListener("click", (e) => {
@@ -41,7 +43,7 @@ if (form) {
       console.log("before request");
       const res = await axios({
         method: "POST",
-        url: "http://127.0.0.1:3000/adminpanel",
+        url: "http://127.0.0.1:3000/adminpanel/registerSite",
         data: {
           siteName: siteName.value,
           description: description.value,
@@ -58,6 +60,7 @@ if (form) {
 }
 
 console.log(loginForm);
+
 if (loginForm)
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -67,3 +70,16 @@ if (loginForm)
     const password = document.getElementById("password").value;
     login(email, password);
   });
+
+if (signupForm) {
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const passwordConfirm = document.getElementById("passwordConfirm").value;
+
+    signup(name, email, password, passwordConfirm);
+  });
+}
