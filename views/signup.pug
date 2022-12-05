@@ -1,0 +1,27 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Site Registration Form
+    link(href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='/stylesheets/siteRegistrationForm.css')
+body
+    form.form--registerSite
+        h1 Register Site
+        fieldset
+            legend
+                span.number 1
+                | Tourist Site Details
+            label(for='siteName') Name:
+            input#siteName.siteName(type='text' name='siteName')
+            label(for='siteDescription') Description:
+            input#siteDescription.siteDescription(type='text' name='siteDescription')
+            legend
+                span.number 2
+                | Parameters Count
+            label(for='name') Enter Number of Parameters:
+            input#name.count(type='number' name='count')
+            button.add-Btn Add More parameterss
+            .abc
+        button(type='submit') Register Site
+    script(  src='/javascripts/bundle.js')
