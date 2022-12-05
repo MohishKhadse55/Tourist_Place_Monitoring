@@ -59,3 +59,39 @@ exports.login = async (req, res, next) => {
 
   createSendToken(user, 200, res);
 };
+
+exports.getLoginForm = (req, res, next) => {
+  res.status(200).render("login", { title: "Log in to your account" });
+};
+
+exports.isLoggedIn = async (req, res, next) => {
+  try {
+    if (req.cookies.jwt) {
+      console.log("cookie exist");
+      // token = req.cookies.jwt;
+
+      const decoded = await promisify(jwt.verify)(
+        req.cookies.jwt,
+        process.env.JWT_SECRET
+      );
+
+      // 3) Check if the user is still exist
+      const freshUser = await User.findById(decoded.id);
+      if (!freshUser) {
+        return next();
+      }
+      // // 4 check if the user changed the password after the token was issued
+      // if (freshUser.changedPasswordAfter(decoded.iat)) {
+      //   return next();
+      // }
+
+      // Granted access to the protected route
+      res.locals.user = freshUser;
+
+      return next();
+    }
+  } catch (error) {
+    return next();
+  }
+  next();
+};

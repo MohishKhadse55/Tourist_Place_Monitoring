@@ -5,6 +5,8 @@ let count = document.querySelector(".count");
 const siteName = document.getElementById("siteName");
 const description = document.getElementById("siteDescription");
 const abc = document.querySelector(".abc");
+const loginForm = document.querySelector(".form--login");
+import { login } from "./login";
 
 if (addBtn) {
   addBtn.addEventListener("click", (e) => {
@@ -54,3 +56,14 @@ if (form) {
     }
   });
 }
+
+console.log(loginForm);
+if (loginForm)
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // console.log('inside login form');
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    login(email, password);
+  });
