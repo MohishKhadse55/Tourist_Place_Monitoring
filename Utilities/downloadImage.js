@@ -6,7 +6,7 @@ const Lake = require("./../models/photoModel");
 exports.getDataFunction = async () => {
   let res = 0;
   const name = `image-${Date.now()}.jpg`;
-  const url = "http://192.168.1.15/capture";
+  const url = "http://192.168.31.63/capture";
   const pa = path.resolve(__dirname, "./../public/images", name);
   const writer = Fs.createWriteStream(pa);
   try {
@@ -17,7 +17,7 @@ exports.getDataFunction = async () => {
     });
     await response.data.pipe(writer);
 
-    res = await Axios.get("http://192.168.1.2/capture");
+    res = await Axios.get("http://192.168.31.41/capture");
   } catch (err) {
     console.log(err.message);
   }
@@ -30,6 +30,7 @@ exports.getDataFunction = async () => {
     airQuality: res.data.pollution,
   };
   const logs = await Lake.create(object);
+  console.log("respose created");
 
   console.log(res.data);
   console.log(name);

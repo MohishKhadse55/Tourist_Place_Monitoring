@@ -67,7 +67,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then((con) => {
-    // setInterval(getData.getDataFunction, 5000);
+    setInterval(getData.getDataFunction, 20000);
     console.log("Databases connection established");
   });
 

@@ -5,9 +5,7 @@ const authController = require("../Controllers/authController");
 const imageController = require("./../Controllers/imageController");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
+router.get("/", authController.getLoginForm);
 
 router.get(
   "/getSiteData/:id",
@@ -21,7 +19,11 @@ router.post(
   logsController.storeLogs
 );
 
-router.get("/getImages/:count", imageController.getLogs);
+router.get(
+  "/getImages/:count",
+  authController.isLoggedIn,
+  imageController.getLogs
+);
 
 router.post(
   "/upload",

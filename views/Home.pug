@@ -26,11 +26,10 @@ body
                     img(src='./location.png' alt='' height='20px')
                 ul
                     li
-                        a(href='#') Shanivar Wada
-                        a(href='#') Katraj Lake
-                        a(href='#') Singhgad
-                        a(href='#') Eskon Temple
-                        a(href='#') Saras Baug
+                        a(href= `http://127.0.0.1:3000/getImages/5`)= `Katraj Lake`
+                            each sitea in allSiteName
+                                a(href= `http://127.0.0.1:3000/getSiteData/${sitea.id}`)= `${sitea.siteName}`
+
 
         .profile
             li
@@ -41,11 +40,13 @@ body
                     li
                         a(href='#')
                             img(src='/images/shajjad.jpg' height='50px' alt='')
-                        a(href='') Name : Shajjad Shaikh
-                        a(href='') Designation : Supervisor
+                        a(href='')= `Name : ${user.name}`
+                        a(href='')= `Designation : ${user.role}`
                         a(href='') Shift : 2nd
-                        a(href='') Contact : 9987106516
-        button.logout  Log Out
+
+
+        a(href='http://127.0.0.1:3000/').logout  Log Out
+
     .text1 Images :
 
     .gallery-container

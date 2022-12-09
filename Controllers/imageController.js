@@ -2,6 +2,7 @@ var fs = require("fs");
 var multer = require("multer");
 const Lake = require("./../models/photoModel");
 var path = require("path");
+const Site = require("../models/siteModel");
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -59,6 +60,9 @@ exports.storeLogs = async (req, res, next) => {
 
 exports.getLogs = async (req, res, next) => {
   console.log(req.params.count);
+  let allSiteName = await Site.find({}).select("siteName");
+  res.locals.allSiteName = allSiteName;
+  console.log(allSiteName);
   const logs = await Lake.find()
     .sort({ _id: -1 })
     .limit(+req.params.count);

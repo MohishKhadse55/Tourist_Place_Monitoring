@@ -27,6 +27,7 @@ body
                     img(src='/images/location.png' alt='' height='20px')
                 ul
                     li
+                        a(href= `http://127.0.0.1:3000/getImages/5`)= `Katraj Lake`
                         each sitea in logs.allSiteName
                             a(href= `http://127.0.0.1:3000/getSiteData/${sitea.id}`)= `${sitea.siteName}`
 
@@ -43,8 +44,8 @@ body
                         a(href='')= `${user.name}`
                         a(href='') Designation : Supervisor
                         a(href='') Shift : 2nd
-                        a(href='') Contact : 9987106516
-        button.logout  Log Out
+
+        a(href='http://127.0.0.1:3000/').logout  Log Out
     .text1 Images :
 
     .gallery-container
